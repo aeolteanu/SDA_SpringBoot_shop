@@ -21,7 +21,7 @@ public class CustomerService {
 
     }
 
-    public List<Account> getCustomerAccount() {
-        return accountRepository.getAll();
+    public Iterable<Account> getCustomerAccount() {
+        return accountRepository.findAll();
     }
 }
