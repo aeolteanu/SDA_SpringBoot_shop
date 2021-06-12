@@ -46,5 +46,6 @@ public class WebshopApplication implements CommandLineRunner {
 				"client@exempu.com",
 				"Mail subject",
 				"Mail content");
+
 	}
 }

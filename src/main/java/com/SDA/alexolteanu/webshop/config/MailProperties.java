@@ -1,10 +1,10 @@
-package com.SDA.alexolteanu.webshop.config;
+package com.sda.traiangradinaru.webshop.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "mail.smtp")
+@ConfigurationProperties(prefix="mail.smtp")
 public class MailProperties {
     private String username;
     private String password;

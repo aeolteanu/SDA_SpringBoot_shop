@@ -1,6 +1,6 @@
 package com.SDA.alexolteanu.webshop.service;
 
-import com.SDA.alexolteanu.webshop.config.MailProperties;
+import com.sda.traiangradinaru.webshop.config.MailProperties;
 import org.springframework.stereotype.Service;
 
 import javax.mail.Authenticator;
@@ -17,8 +17,8 @@ public class MailService {
     public MailService(MailProperties mailProperties) {
         this.mailProperties = mailProperties;
     }
-    public void sendMail(String from, String to, String subject, String content) throws Exception{
 
+    public void sendMail(String from, String to, String subject, String content) throws Exception {
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", mailProperties.getAuth());
         properties.put("mail.smtp.starttls.enable", mailProperties.getStarttls());
@@ -26,13 +26,15 @@ public class MailService {
         properties.put("mail.smtp.port", mailProperties.getPort());
         properties.put("mail.smtp.ssl.trust", mailProperties.getTrust());
 
-        Session session = Session.getInstance(properties, new Authenticator() {
+        Session session = Session.getInstance(properties, new Authenticator()
+        {
             @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
+            protected PasswordAuthentication getPasswordAuthentication()
+            {
                 return new PasswordAuthentication(mailProperties.getUsername(), mailProperties.getPassword());
-
             }
         });
+
         Message message = new MimeMessage(session);
         message.setFrom(new InternetAddress(from));
         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
@@ -43,8 +45,5 @@ public class MailService {
         multipart.addBodyPart(mimeBodyPart);
         message.setContent(multipart);
         Transport.send(message);
-
-
-
     }
 }
