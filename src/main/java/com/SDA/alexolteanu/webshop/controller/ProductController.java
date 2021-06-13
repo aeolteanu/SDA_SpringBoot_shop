@@ -6,6 +6,7 @@ import com.SDA.alexolteanu.webshop.service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,8 +31,8 @@ public class ProductController {
         throw new ResourceNotFoundException("product with id:" + productId + " was not found!");
     }
 
-    @PostMapping
-    public String createProduct(@RequestBody Product product){
+    @PostMapping("/products")
+    public String createProduct(@Valid @RequestBody Product product){
         productService.save(product);
         return "Product save";
     }
