@@ -1,14 +1,14 @@
 package com.SDA.alexolteanu.webshop.service;
 
-import com.sda.traiangradinaru.webshop.config.MailProperties;
+import com.SDA.alexolteanu.webshop.config.MailProperties;
 import org.springframework.stereotype.Service;
 
-import javax.mail.Authenticator;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import java.util.Properties;
 import javax.mail.*;
-import javax.mail.internet.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+import java.util.Properties;
 
 @Service
 public class MailService {

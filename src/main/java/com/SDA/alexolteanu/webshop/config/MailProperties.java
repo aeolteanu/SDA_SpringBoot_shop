@@ -1,4 +1,4 @@
-package com.sda.traiangradinaru.webshop.config;
+package com.SDA.alexolteanu.webshop.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
