@@ -10,6 +10,29 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
+    @Column(name = "login")
+    private String login;
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Column(name = "password")
+    private String password;
+
     @Column(name = "billing_adress")
     private String billingAdress;
     @Column(name = "is_closed")
